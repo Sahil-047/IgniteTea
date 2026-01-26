@@ -7,6 +7,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/navigation";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 export function Menus() {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -54,27 +55,27 @@ export function Menus() {
               onMouseLeave={handleMouseLeave}>
               <ul className="grid grid-cols-1 md:grid-cols-5 gap-6 w-full">
                 <li>
-                  <a href="#" className="block group">
+                  <Link to="/shop/all" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       All Products
                     </div>
-                  </a>
-                  <a href="#" className="block group">
+                  </Link>
+                  <Link to="/shop/new-arrivals" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       New Arrivals
                     </div>
-                  </a>
-                  <a href="#" className="block group">
+                  </Link>
+                  <Link to="/shop/best-sellers" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       Best Sellers
                     </div>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </NavigationMenuContent>
@@ -93,27 +94,27 @@ export function Menus() {
               onMouseLeave={handleMouseLeave}>
               <ul className="grid grid-cols-1 md:grid-cols-5 gap-6 w-full">
                 <li>
-                  <a href="#" className="block group">
+                  <Link to="/teaware/teapots" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       Teapots
                     </div>
-                  </a>
-                  <a href="#" className="block group">
+                  </Link>
+                  <Link to="/teaware/cups-mugs" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       Cups & Mugs
                     </div>
-                  </a>
-                  <a href="#" className="block group">
+                  </Link>
+                  <Link to="/teaware/accessories" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       Accessories
                     </div>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </NavigationMenuContent>
@@ -132,27 +133,27 @@ export function Menus() {
               onMouseLeave={handleMouseLeave}>
               <ul className="grid grid-cols-1 md:grid-cols-5 gap-6 w-full">
                 <li>
-                  <a href="#" className="block group">
+                  <Link to="/gifts/sets" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       Gift Sets
                     </div>
-                  </a>
-                  <a href="#" className="block group">
+                  </Link>
+                  <Link to="/gifts/cards" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       Gift Cards
                     </div>
-                  </a>
-                  <a href="#" className="block group">
+                  </Link>
+                  <Link to="/gifts/custom" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       Custom Gifts
                     </div>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </NavigationMenuContent>
@@ -171,27 +172,27 @@ export function Menus() {
               onMouseLeave={handleMouseLeave}>
               <ul className="grid grid-cols-1 md:grid-cols-5 gap-6 w-full">
                 <li>
-                  <a href="#" className="block group">
+                  <Link to="/subscription/monthly" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       Monthly Plans
                     </div>
-                  </a>
-                  <a href="#" className="block group">
+                  </Link>
+                  <Link to="/subscription/quarterly" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       Quarterly Plans
                     </div>
-                  </a>
-                  <a href="#" className="block group">
+                  </Link>
+                  <Link to="/subscription/custom" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       Custom Plans
                     </div>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </NavigationMenuContent>
@@ -210,27 +211,27 @@ export function Menus() {
               onMouseLeave={handleMouseLeave}>
               <ul className="grid grid-cols-1 md:grid-cols-5 gap-6 w-full">
                 <li>
-                  <a href="#" className="block group">
+                  <Link to="/encyclopedia/tea-types" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       Tea Types
                     </div>
-                  </a>
-                  <a href="#" className="block group">
+                  </Link>
+                  <Link to="/encyclopedia/brewing-guide" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       Brewing Guide
                     </div>
-                  </a>
-                  <a href="#" className="block group">
+                  </Link>
+                  <Link to="/encyclopedia/history" className="block group">
                     <div 
                       className="mb-3 text-xl font-semibold hover:text-black text-black/80"
                       style={{ fontFamily: "'Overpass', sans-serif" }}>
                       History
                     </div>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </NavigationMenuContent>
@@ -238,12 +239,12 @@ export function Menus() {
 
           {/* 6. VISIT US - Simple link */}
           <NavigationMenuItem>
-            <a 
-              href="#" 
+            <Link 
+              to="/visit" 
               className="inline-flex h-10 items-center justify-center px-4 py-2 text-sm transition-colors focus:outline-none text-black/90 hover:text-black"
               style={{ fontFamily: "'Overpass', sans-serif" }}>
               VISIT US
-            </a>
+            </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>

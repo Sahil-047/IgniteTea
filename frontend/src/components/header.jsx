@@ -1,10 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from "react";
-import { ShoppingBag, Equal } from "lucide-react";
+import { Equal } from "lucide-react";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Menus } from "@/components/menus";
 import { PhoneMenu } from "@/components/phone-menus";
 import { Search } from "@/components/search";
+import { Cart } from "@/components/Cart";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -37,8 +39,8 @@ const Header = () => {
       }`}>
       <div className="w-full max-w-4xl flex justify-center gap-6">
         <div className="flex w-full items-center justify-between">
-          <a
-            href="#"
+          <Link
+            to="/"
             aria-label="home"
             className="flex gap-2 px-6 whitespace-nowrap items-center mr-8">
             <span
@@ -46,15 +48,13 @@ const Header = () => {
               style={{ fontFamily: "'Boldonse', sans-serif", fontWeight: 'normal' }}>
               IgniteTea
             </span>
-          </a>
+          </Link>
 
           <Menus />
           <Sheet>
             <div className="flex items-center px-2 gap-2 ml-8">
               <Search />
-              <button className="h-9 w-9 text-black hover:text-black/80 relative">
-                <ShoppingBag className="h-6 w-6" />
-              </button>
+              <Cart />
               <SheetTrigger asChild>
                 <button className="h-9 w-9 text-black hover:text-black/80 lg:hidden">
                   <Equal className="h-6 w-6" />

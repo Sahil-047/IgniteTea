@@ -1,22 +1,9 @@
 import * as React from "react";
-import {
-  ArrowUpRightIcon,
-  PaletteIcon,
-  FilePlus2Icon,
-  LayoutTemplateIcon,
-  SearchIcon,
-  PenToolIcon,
-} from "lucide-react";
+import { SearchIcon } from "lucide-react";
 
 import {
   CommandDialog,
-  CommandEmpty,
-  CommandGroup,
   CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
 } from "@/components/ui/command";
 
 export function Search() {
@@ -45,55 +32,10 @@ export function Search() {
         </span>
       </button>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type to search components, assets, or docs..." />
-        <CommandList>
-          <CommandEmpty>No matches found.</CommandEmpty>
-
-          <CommandGroup heading="Create">
-            <CommandItem>
-              <FilePlus2Icon size={16} className="opacity-60" aria-hidden="true" />
-              <span>New project</span>
-              <CommandShortcut className="justify-center">⌘N</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <LayoutTemplateIcon size={16} className="opacity-60" aria-hidden="true" />
-              <span>New template</span>
-              <CommandShortcut className="justify-center">⌘T</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <PenToolIcon size={16} className="opacity-60" aria-hidden="true" />
-              <span>Start design</span>
-              <CommandShortcut className="justify-center">⌘S</CommandShortcut>
-            </CommandItem>
-          </CommandGroup>
-
-          <CommandSeparator />
-
-          <CommandGroup heading="Navigate">
-            <CommandItem>
-              <ArrowUpRightIcon size={16} className="opacity-60" aria-hidden="true" />
-              <span>Go to workspace</span>
-            </CommandItem>
-            <CommandItem>
-              <ArrowUpRightIcon size={16} className="opacity-60" aria-hidden="true" />
-              <span>Go to assets</span>
-            </CommandItem>
-            <CommandItem>
-              <ArrowUpRightIcon size={16} className="opacity-60" aria-hidden="true" />
-              <span>Go to documentation</span>
-            </CommandItem>
-          </CommandGroup>
-
-          <CommandSeparator />
-
-          <CommandGroup heading="Themes">
-            <CommandItem>
-              <PaletteIcon size={16} className="opacity-60" aria-hidden="true" />
-              <span>Switch theme</span>
-              <CommandShortcut>⌘⇧T</CommandShortcut>
-            </CommandItem>
-          </CommandGroup>
-        </CommandList>
+        <CommandInput 
+          placeholder="Search for teas..." 
+          style={{ fontFamily: "'Rajdhani', sans-serif" }}
+        />
       </CommandDialog>
     </>
   );

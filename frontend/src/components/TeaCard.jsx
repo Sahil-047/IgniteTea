@@ -32,20 +32,24 @@ export function TeaCard({ brand, name, weight, type, images, price, rating, revi
 
   return (
     <div 
-      className="overflow-hidden bg-transparent aspect-square flex flex-col"
+      className="overflow-visible bg-transparent aspect-square flex flex-col"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="flex-1 min-h-0 overflow-hidden bg-transparent">
+      <div className="flex-1 min-h-0 overflow-visible bg-transparent relative px-4">
         {images && images.length > 0 && (
-          <div className="relative w-full h-full">
+          <div className={`relative w-full h-full overflow-hidden transition-all duration-500 ease-out ${
+            isHovered ? 'scale-125 -translate-y-8 shadow-2xl z-50' : 'scale-100 translate-y-0 z-10'
+          }`}>
             {images.map((img, index) => (
               <img
                 key={index}
                 src={img}
                 alt={`${name} ${index + 1}`}
-                className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 scale-125 ${
-                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-out ${
+                  index === currentImageIndex 
+                    ? 'opacity-100' 
+                    : 'opacity-0'
                 }`}
               />
             ))}
