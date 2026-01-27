@@ -10,7 +10,7 @@ import teaPot6 from "@/assets/Tea Pots/Tea Pots  (6).png";
 
 export default function TeaPots() {
   return (
-    <section className="min-h-screen py-16 px-4" style={{ backgroundColor: 'rgba(212, 233, 210, 0.3)' }}>
+    <section className="min-h-screen py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 

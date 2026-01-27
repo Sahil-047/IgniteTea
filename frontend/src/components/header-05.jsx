@@ -168,7 +168,7 @@ export default function Header05() {
           </div>
         </section>
 
-        <section className="min-h-screen py-16 px-4 pb-32 md:pb-40" style={{ backgroundColor: 'rgba(212, 233, 210, 0.3)' }}>
+        <section className="min-h-screen py-16 px-4 pb-32 md:pb-40" style={{ backgroundColor: '#f2f8f1' }}>
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2
@@ -226,7 +226,7 @@ export default function Header05() {
 
         <TeaPots />
 
-        <section className="min-h-screen py-16 px-4" style={{ backgroundColor: 'rgba(212, 233, 210, 0.3)' }}>
+        <section className="min-h-screen py-16 px-4" style={{ backgroundColor: '#f2f8f1' }}>
           <div className="max-w-7xl mx-auto">
             {/* Section Heading */}
             <div className="text-center ">
@@ -274,7 +274,7 @@ export default function Header05() {
                 {/* Learn More Button */}
                 <div className="text-center">
                   <button
-                    className="px-12 py-4 bg-[#f5f5dc] hover:bg-[#e8e8d0] text-gray-800 font-medium text-lg rounded-none transition-colors duration-300"
+                    className="px-12 py-4 bg-[#d9cda4] hover:bg-[#d9cda4] text-gray-800 font-medium text-lg rounded-none transition-colors duration-300"
                     style={{ fontFamily: "'Rajdhani', sans-serif" }}>
                     LEARN MORE
                   </button>
@@ -288,7 +288,7 @@ export default function Header05() {
           ref={poetrySectionRef}
           className="relative w-full h-screen overflow-hidden z-20"
           style={{
-            backgroundColor: "rgba(212, 233, 210, 0.3)",
+            backgroundColor: "#f2f8f1",
             backgroundImage: `url(${teaWorkers})`,
             backgroundAttachment: "fixed",
             backgroundPosition: "center",
@@ -329,7 +329,7 @@ export default function Header05() {
           </div>
         </section>
 
-        <section className="py-20 px-4" style={{ backgroundColor: "rgba(212, 233, 210, 0.3)" }}>
+        <section className="py-20 px-4" style={{ backgroundColor: "#f2f8f1" }}>
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2
@@ -365,7 +365,7 @@ export default function Header05() {
                     />
                   </div>
                   <button
-                    className="px-8 py-3 bg-[#f5f5dc] hover:bg-[#e8e8d0] text-gray-800 font-medium text-base rounded-none transition-colors duration-300"
+                    className="px-8 py-3 bg-[#d9cda4] hover:bg-[#d9cda4] text-gray-800 font-medium text-base rounded-none transition-colors duration-300"
                     style={{ fontFamily: "'Rajdhani', sans-serif" }}>
                     DISCOVER
                   </button>
@@ -379,7 +379,7 @@ export default function Header05() {
         <div className="w-full bg-[#f2f8f1]">
           <div className="max-w-[450px] mx-auto border-t border-[#748e73]"></div>
         </div>
-        <section className="py-20 px-4" style={{ backgroundColor: "rgba(212, 233, 210, 0.3)" }}>
+        <section className="py-20 px-4" style={{ backgroundColor: "#f2f8f1" }}>
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2
@@ -448,7 +448,7 @@ export default function Header05() {
                   </ul>
 
                   <button
-                    className="mt-auto px-8 py-3 bg-[#f5f5dc] hover:bg-[#e8e8d0] text-gray-800 font-medium text-base rounded-none transition-colors duration-300"
+                    className="mt-auto px-8 py-3 bg-[#d9cda4] hover:bg-[#d9cda4] text-gray-800 font-medium text-base rounded-none transition-colors duration-300"
                     style={{ fontFamily: "'Rajdhani', sans-serif" }}>
                     DISCOVER
                   </button>
@@ -457,7 +457,7 @@ export default function Header05() {
             </div>
           </div>
         </section>
-        <section className="py-20" style={{ backgroundColor: "rgba(212, 233, 210, 0.3)" }}>
+        <section className="py-20" style={{ backgroundColor: "#f2f8f1" }}>
           <div className="max-w-7xl mx-10 mb-2 mb-6">
             <p
               className="text-lg md:text-5xl text-[#748e73]"

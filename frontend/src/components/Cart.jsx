@@ -193,7 +193,7 @@ export function Cart() {
 
             {/* Checkout Button */}
             <button
-              className="w-full bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-none transition-colors duration-300"
+              className="w-full bg-[#d9cda4] hover:bg-[#d9cda4] text-gray-800 py-3 px-6 rounded-none transition-colors duration-300"
               style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 600 }}>
               PROCEED TO CHECKOUT
             </button>

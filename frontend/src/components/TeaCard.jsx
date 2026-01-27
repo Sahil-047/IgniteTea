@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Star } from "lucide-react";
+import { Star, Heart } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
-export function TeaCard({ brand, name, weight, type, images, price, rating, reviews }) {
+export function TeaCard({ brand, name, weight, type, images, price, rating, reviews, isNew, isBestSeller }) {
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
   const intervalRef = useRef(null);
 
   useEffect(() => {
@@ -32,7 +33,7 @@ export function TeaCard({ brand, name, weight, type, images, price, rating, revi
 
   return (
     <div 
-      className="overflow-visible bg-transparent aspect-square flex flex-col"
+      className="overflow-visible bg-transparent aspect-square flex flex-col relative max-w-sm mx-auto w-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -41,6 +42,52 @@ export function TeaCard({ brand, name, weight, type, images, price, rating, revi
           <div className={`relative w-full h-full overflow-hidden transition-all duration-500 ease-out ${
             isHovered ? 'scale-125 -translate-y-8 shadow-2xl z-50' : 'scale-100 translate-y-0 z-10'
           }`}>
+            {/* Wishlist Heart Icon */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsFavorite(!isFavorite);
+              }}
+              className="absolute top-2 right-2 z-[100] p-1.5 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-300"
+              aria-label="Add to wishlist">
+              <Heart
+                size={16}
+                className={`transition-all duration-300 ${
+                  isFavorite ? "fill-red-500 stroke-red-500" : "stroke-gray-600"
+                }`}
+              />
+            </button>
+            
+            {/* NEW Ribbon Badge */}
+            {isNew && (
+              <div className="absolute top-0 left-0 z-[100] overflow-hidden w-24 h-24 pointer-events-none">
+                <div 
+                  className="absolute top-4 -left-8 w-32 text-center text-white text-xs font-bold tracking-wider py-1 shadow-md transform -rotate-45"
+                  style={{ 
+                    fontFamily: "'Rajdhani', sans-serif",
+                    backgroundColor: '#dc2626'
+                  }}>
+                  NEW
+                </div>
+              </div>
+            )}
+
+            {/* BEST SELLER Ribbon Badge with Stars */}
+            {isBestSeller && (
+              <div className="absolute top-0 left-0 z-[100] overflow-hidden w-24 h-24 pointer-events-none">
+                <div 
+                  className="absolute top-4 -left-8 w-32 text-center text-white text-xs font-bold tracking-wider py-1 shadow-md transform -rotate-45 flex items-center justify-center gap-1"
+                  style={{ 
+                    fontFamily: "'Rajdhani', sans-serif",
+                    backgroundColor: '#f59e0b'
+                  }}>
+                  <span className="text-[10px]">★</span>
+                  <span>BEST</span>
+                  <span className="text-[10px]">★</span>
+                </div>
+              </div>
+            )}
+            
             {images.map((img, index) => (
               <img
                 key={index}
@@ -103,7 +150,7 @@ export function TeaCard({ brand, name, weight, type, images, price, rating, revi
       </div>
       <div className="p-4 pt-0 flex-shrink-0">
         <Button 
-          className="w-full bg-[#f5f5dc] hover:bg-[#e8e8d0] text-gray-800 font-medium rounded-none"
+          className="w-full bg-[#d9cda4] hover:bg-[#d9cda4] text-gray-800 font-medium rounded-none"
           style={{ fontFamily: "'Rajdhani', sans-serif" }}>
           ADD TO CART
         </Button>
