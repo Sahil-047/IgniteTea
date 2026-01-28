@@ -32,11 +32,7 @@ const PhoneMenu = () => {
     },
     {
       title: "Subscription",
-      items: [
-        { label: "Monthly Plans", href: "/subscription/monthly" },
-        { label: "Quarterly Plans", href: "/subscription/quarterly" },
-        { label: "Custom Plans", href: "/subscription/custom" },
-      ],
+      items: [{ label: "Subscription", href: "/subscription" }],
     },
     {
       title: "Encyclopedia",

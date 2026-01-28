@@ -160,42 +160,13 @@ export function Menus() {
           </NavigationMenuItem>
 
           {/* 4. Subscription */}
-          <NavigationMenuItem
-            onMouseEnter={() => handleMouseEnter("subscription")}
-            onMouseLeave={handleMouseLeave}>
-            <NavigationMenuTrigger isActive={activeMenu === "subscription"}>
+          <NavigationMenuItem>
+            <Link
+              to="/subscription"
+              className="inline-flex h-10 items-center justify-center px-4 py-2 text-sm text-black/90 hover:text-black transition-colors"
+              style={{ fontFamily: "'Overpass', sans-serif" }}>
               Subscription
-            </NavigationMenuTrigger>
-            <NavigationMenuContent 
-              isOpen={activeMenu === "subscription"}
-              onMouseEnter={() => handleMouseEnter("subscription")}
-              onMouseLeave={handleMouseLeave}>
-              <ul className="grid grid-cols-1 md:grid-cols-5 gap-6 w-full">
-                <li>
-                  <Link to="/subscription/monthly" className="block group">
-                    <div 
-                      className="mb-3 text-xl font-semibold hover:text-black text-black/80"
-                      style={{ fontFamily: "'Overpass', sans-serif" }}>
-                      Monthly Plans
-                    </div>
-                  </Link>
-                  <Link to="/subscription/quarterly" className="block group">
-                    <div 
-                      className="mb-3 text-xl font-semibold hover:text-black text-black/80"
-                      style={{ fontFamily: "'Overpass', sans-serif" }}>
-                      Quarterly Plans
-                    </div>
-                  </Link>
-                  <Link to="/subscription/custom" className="block group">
-                    <div 
-                      className="mb-3 text-xl font-semibold hover:text-black text-black/80"
-                      style={{ fontFamily: "'Overpass', sans-serif" }}>
-                      Custom Plans
-                    </div>
-                  </Link>
-                </li>
-              </ul>
-            </NavigationMenuContent>
+            </Link>
           </NavigationMenuItem>
 
           {/* 5. Encyclopedia */}

@@ -134,8 +134,8 @@ body {
   }
   #root {
     background-color: #f2f8f1;
-    min-height: 100vh;
-  }
+  min-height: 100vh;
+}
   /* Hide scrollbar for Chrome, Safari and Opera */
   body::-webkit-scrollbar,
   html::-webkit-scrollbar {

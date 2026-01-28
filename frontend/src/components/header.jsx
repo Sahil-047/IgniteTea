@@ -1,16 +1,46 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from "react";
-import { Equal } from "lucide-react";
+import { Equal, User } from "lucide-react";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Menus } from "@/components/menus";
 import { PhoneMenu } from "@/components/phone-menus";
 import { Search } from "@/components/search";
 import { Cart } from "@/components/Cart";
-import { Link } from "react-router-dom";
+import { Login } from "@/components/Login";
+import { AccountMenu } from "@/components/AccountMenu";
+import { Link, useNavigate } from "react-router-dom";
+import { authService } from "@/services/authService";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [loginOpen, setLoginOpen] = useState(false);
+  const [accountMenuOpen, setAccountMenuOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Check authentication status
+  useEffect(() => {
+    setIsAuthenticated(authService.isAuthenticated());
+    
+    // Listen for storage changes (when token is set/removed in other tabs)
+    const handleStorageChange = () => {
+      setIsAuthenticated(authService.isAuthenticated());
+    };
+    
+    // Listen for custom auth-change event (when login/logout happens in same tab)
+    const handleAuthChange = () => {
+      setIsAuthenticated(authService.isAuthenticated());
+    };
+    
+    window.addEventListener('storage', handleStorageChange);
+    window.addEventListener('auth-change', handleAuthChange);
+    
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('auth-change', handleAuthChange);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +61,14 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
+
+  const handleUserIconClick = () => {
+    if (isAuthenticated) {
+      setAccountMenuOpen(true);
+    } else {
+      setLoginOpen(true);
+    }
+  };
 
   return (
     <header 
@@ -55,6 +93,28 @@ const Header = () => {
             <div className="flex items-center px-2 gap-2 ml-8">
               <Search />
               <Cart />
+              <button
+                onClick={handleUserIconClick}
+                aria-label="User account"
+                className="h-9 w-9 flex items-center justify-center text-black hover:text-black/80">
+                <User className="h-6 w-6" />
+              </button>
+              <Login
+                open={loginOpen}
+                onOpenChange={setLoginOpen}
+                onLoginSuccess={(data) => {
+                  console.log("Login successful:", data);
+                  setIsAuthenticated(true);
+                  setLoginOpen(false);
+                  // Dispatch custom event to notify other components
+                  window.dispatchEvent(new Event('auth-change'));
+                  setAccountMenuOpen(true);
+                }}
+              />
+              <AccountMenu 
+                open={accountMenuOpen} 
+                onOpenChange={setAccountMenuOpen} 
+              />
               <SheetTrigger asChild>
                 <button className="h-9 w-9 text-black hover:text-black/80 lg:hidden">
                   <Equal className="h-6 w-6" />

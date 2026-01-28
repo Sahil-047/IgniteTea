@@ -18,9 +18,7 @@ import GiftCards from './pages/gifts/GiftCards'
 import CustomGifts from './pages/gifts/CustomGifts'
 
 // Subscription pages
-import MonthlyPlans from './pages/subscription/MonthlyPlans'
-import QuarterlyPlans from './pages/subscription/QuarterlyPlans'
-import CustomPlans from './pages/subscription/CustomPlans'
+import Subscription from './pages/subscription/Subscription'
 
 // Encyclopedia pages
 import TeaTypes from './pages/encyclopedia/TeaTypes'
@@ -29,6 +27,16 @@ import History from './pages/encyclopedia/History'
 
 // Other pages
 import VisitUs from './pages/VisitUs'
+
+// Auth pages
+import LoginPage from './pages/auth/LoginPage'
+import AccountPage from './pages/auth/AccountPage'
+
+// Account pages
+import OrdersPage from './pages/account/OrdersPage'
+import WishlistPage from './pages/account/WishlistPage'
+import AddressesPage from './pages/account/AddressesPage'
+import SettingsPage from './pages/account/SettingsPage'
 
 function App() {
   return (
@@ -53,9 +61,7 @@ function App() {
         <Route path="/gifts/custom" element={<Layout><CustomGifts /></Layout>} />
 
         {/* Subscription routes */}
-        <Route path="/subscription/monthly" element={<Layout><MonthlyPlans /></Layout>} />
-        <Route path="/subscription/quarterly" element={<Layout><QuarterlyPlans /></Layout>} />
-        <Route path="/subscription/custom" element={<Layout><CustomPlans /></Layout>} />
+        <Route path="/subscription" element={<Layout><Subscription /></Layout>} />
 
         {/* Encyclopedia routes */}
         <Route path="/encyclopedia/tea-types" element={<Layout><TeaTypes /></Layout>} />
@@ -64,6 +70,16 @@ function App() {
 
         {/* Other routes */}
         <Route path="/visit" element={<Layout><VisitUs /></Layout>} />
+
+        {/* Auth routes */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/account" element={<AccountPage />} />
+        
+        {/* Account section routes */}
+        <Route path="/account/orders" element={<OrdersPage />} />
+        <Route path="/account/wishlist" element={<WishlistPage />} />
+        <Route path="/account/addresses" element={<AddressesPage />} />
+        <Route path="/account/settings" element={<SettingsPage />} />
       </Routes>
     </Router>
   )

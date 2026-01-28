@@ -25,7 +25,7 @@ export default function TeaPots() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
             <TeaCard 
               brand="IGNITE TEA"

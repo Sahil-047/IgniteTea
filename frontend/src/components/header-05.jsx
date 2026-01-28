@@ -183,7 +183,7 @@ export default function Header05() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
                 <TeaCard
                   brand="IGNITE TEA"
@@ -373,7 +373,7 @@ export default function Header05() {
               ))}
             </div>
           </div>
-        </section>
+        </section> 
 
 
         <div className="w-full bg-[#f2f8f1]">
